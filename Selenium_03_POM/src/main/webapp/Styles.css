@@ -1,0 +1,11 @@
+@charset "UTF-8";
+#logo{height:10vh;}
+body {padding:0px; margin:0px; font-family: "Arial";}
+#banner{background-color:#000; color: #fff; height:20vh; width:100vw; padding-top:5px; }
+h1{margin-left:10px;}
+h4{margin-left:10px;}
+#fs{display:flex; justify-content: center; width:95vw;}
+.basic_text{font-family:"Times"; font-size:12pt; margin-left:10px;}
+img{height:30vh;}
+#google img{height:10vh; margin-left:80vw;}
+a{text-decoration:none; font-family: "Arial";}
