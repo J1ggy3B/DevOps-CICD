@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Selenium Test</title>
+<script type="text/javascript" src ="Javascript.js"></script>
+<link href="Styles.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="banner"><img id="logo"src="Logo.png" ></img>
+<h4>Learning for Life...</h4>
+</div>
+<H1>Test page for Selenium & JUnit</H1>
+
+<div id=fs>
+
+<fieldset>
+<legend id = "leg" ><h4>Enter Name</h4></legend>
+<input id = "username" type = "text" >
+<button id = "store" >Store Name</button>
+<button id = "recall" >Recall Name</button>
+<button id = "remove" >Remove Name</button>
+<button id = "reset" >Reset</button>
+</fieldset>
+</div>
+<br>
+<div id="carousel">
+<form>
+<img src ="CarouselImages/1.jpg" id="sshow" alt="Paintings">
+<input type="button" value="Prev" onClick="newSlide(-1)">
+<input type="button" value="Next" onClick="newSlide(1)">
+</form>
+</div>
+<div id="text_panel" class="basic_text">
+
+<h4>This is a paragraph of text that we can test to see what it contains:</h4>
+<p>
+Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br> 
+Lorem Ipsum has been the industry's standard dummy text ever since the 1500s<br> 
+</p>
+</div>
+<a id="google" href="https://www.google.com/">
+  <img src="google.ico" alt="Google Logo">Visit Google
+</a>
+</body>
+</html>
