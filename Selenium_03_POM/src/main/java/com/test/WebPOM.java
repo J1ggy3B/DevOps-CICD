@@ -2,7 +2,7 @@ package com.test;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-
+//POM Example
 public class WebPOM {
     private WebDriver driver;
 
