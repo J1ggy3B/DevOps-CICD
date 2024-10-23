@@ -3,9 +3,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.testing</groupId>
-    <artifactId>SeleniumIntro2</artifactId>
+    <artifactId>Selenium_03_POM</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>SeleniumIntro2</name>
+    <name>Selenium_03_POM</name>
     <dependencies>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -22,11 +22,6 @@
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-chrome-driver</artifactId>
             <version>4.25.0</version>
-        </dependency>
-        <dependency>
-            <groupId>com.example</groupId>
-            <artifactId>selenium-maven-project</artifactId>
-            <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
     <build>
