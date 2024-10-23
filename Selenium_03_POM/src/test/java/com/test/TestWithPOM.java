@@ -17,13 +17,14 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import com.test.*;
+
 
 
 
 class TestWithPOM {
 	private WebDriver driver;
 	 private WebPOM myPOM;
+	 
 	@BeforeEach
 	void setUp() throws Exception {
 		System.setProperty("webdriver.edge.driver", "C:\\DevTools\\Selenium WebDriver 4.24.0\\edgedriver_win64\\msedgedriver.exe"); // Replace with actual path
