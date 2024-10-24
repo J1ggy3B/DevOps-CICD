@@ -27,7 +27,7 @@ class TestWithPOM {
 	 
 	@BeforeEach
 	void setUp() throws Exception {
-		System.setProperty("webdriver.edge.driver", "C:\\DevTools\\Selenium WebDriver 4.24.0\\edgedriver_win64\\msedgedriver.exe"); // Replace with actual path
+		System.setProperty("webdriver.edge.driver", "C:\\DevTools\\selenium-java-4.25.0\\msedgedriver.exe"); // Replace with actual path
         driver = new EdgeDriver();
         driver.get("http://localhost:10400/SeleniumIntro3/Index.html"); // Replace with actual local file path
         myPOM = new WebPOM(driver);
