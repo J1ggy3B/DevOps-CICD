@@ -16,7 +16,7 @@ RUN apt-get update && \
     rm apache-tomcat-10.1.31.tar.gz
 
 # Expose the port Tomcat runs on
-EXPOSE 10500
+EXPOSE 20400
 
 # Start Tomcat
 CMD ["sh", "/app/tomcat/bin/catalina.sh", "run"]
