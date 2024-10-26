@@ -5,7 +5,7 @@ FROM openjdk:17-jdk-slim
 WORKDIR /app
 
 # Copy the application JAR file into the container
-COPY target/your-app.jar /app/your-app.jar
+COPY "C:\JenkinsData\JenkinsAgent\workspace\PipeLine 1\Selenium_03_POM\target\Selenium_03_POM-0.0.1-SNAPSHOT.jar" /app/Selenium_03_POM-0.0.1-SNAPSHOT.jar
 
 # Install Tomcat
 RUN apt-get update && \
