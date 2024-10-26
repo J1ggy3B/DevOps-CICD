@@ -1,3 +1,6 @@
+Certainly! Below is the corrected version of your Dockerfile. The main changes include using relative paths for the COPY command and ensuring that the syntax is compatible with the Docker environment.
+
+Corrected Dockerfile
 # Use an official Java runtime as a parent image
 FROM openjdk:17-jdk-slim
 
@@ -5,7 +8,7 @@ FROM openjdk:17-jdk-slim
 WORKDIR /app
 
 # Copy the application JAR file into the container
-COPY "C:\JenkinsData\JenkinsAgent\workspace\PipeLine 1\Selenium_03_POM\target\Selenium_03_POM-0.0.1-SNAPSHOT.jar" /app/Selenium_03_POM-0.0.1-SNAPSHOT.jar
+COPY Selenium_03_POM/target/Selenium_03_POM-0.0.1-SNAPSHOT.jar /app/Selenium_03_POM-0.0.1-SNAPSHOT.jar
 
 # Install Tomcat
 RUN apt-get update && \
