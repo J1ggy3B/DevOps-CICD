@@ -1,6 +1,3 @@
-Certainly! Below is the corrected version of your Dockerfile. The main changes include using relative paths for the COPY command and ensuring that the syntax is compatible with the Docker environment.
-
-Corrected Dockerfile
 # Use an official Java runtime as a parent image
 FROM openjdk:17-jdk-slim
 
