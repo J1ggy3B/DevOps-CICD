@@ -1,14 +1,14 @@
-# Use Tomcat Container
-FROM tomcat:latest
+# Use an official Tomcat image as the base
+FROM tomcat:10.1
 
 # Set the working directory
-WORKDIR /app
+WORKDIR /usr/local/tomcat/webapps
 
-# Copy the application JAR file into the container
-COPY Selenium_03_POM/target/Selenium_03_POM-0.0.1-SNAPSHOT.jar /app/Selenium_03_POM-0.0.1-SNAPSHOT.jar
+# Copy the war file to the Tomcat webapps directory
+COPY target/Selenium_03_POM-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps/
 
-# Expose the port Tomcat runs on
-EXPOSE 10400
+# Expose port 8080 (default Tomcat port) and 10600 for your application
+EXPOSE 8080 10600
 
-# Start Tomcat
+# Start Tomcat server
 CMD ["catalina.sh", "run"]
