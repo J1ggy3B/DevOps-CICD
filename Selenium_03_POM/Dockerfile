@@ -8,7 +8,7 @@ WORKDIR /usr/local/tomcat/webapps
 COPY target/Selenium_03_POM-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps/
 
 # Expose port 10400 (default Tomcat port) and 10600 for your application
-EXPOSE 10400 10600
+EXPOSE 10400 10400
 
 # Start Tomcat server
 CMD ["catalina.sh", "run"]
