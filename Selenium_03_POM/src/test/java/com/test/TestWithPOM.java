@@ -14,7 +14,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.FluentWait;
+
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 
@@ -24,6 +25,7 @@ import org.openqa.selenium.WebDriver;
 class TestWithPOM {
 	private WebDriver driver;
 	 private WebPOM myPOM;
+
 	 
 	@BeforeEach
 	void setUp() throws Exception {
@@ -31,6 +33,8 @@ class TestWithPOM {
         driver = new EdgeDriver();
         driver.get("http://localhost:10400/SeleniumIntro3/Index.html"); // Replace with actual local file path
         myPOM = new WebPOM(driver);
+        FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver);
+        		wait.withTimeout(Duration.ofSeconds(30));
 	}
 
 	@AfterEach
@@ -45,7 +49,7 @@ class TestWithPOM {
 	        usernameField.click();
 	        usernameField.sendKeys("Graeme");
 
-	        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+	        FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver);
 	        wait.until(ExpectedConditions.presenceOfElementLocated(By.id("username")));
 
 	        driver.findElement(By.id("store")).click();
@@ -62,7 +66,7 @@ class TestWithPOM {
 	        usernameField.click();
 	        usernameField.sendKeys("Graeme");
 
-	        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+	        FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver);
 	        WebElement storeButton = wait.until(ExpectedConditions.elementToBeClickable(By.id("store")));
 	        storeButton.click();
 
@@ -83,7 +87,7 @@ class TestWithPOM {
 	        usernameField.click();
 	        usernameField.sendKeys("Graeme");
 
-	        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+	        FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver);
 	        wait.until(ExpectedConditions.presenceOfElementLocated(By.id("username")));
 
 	        driver.findElement(By.id("store")).click();
@@ -107,7 +111,7 @@ class TestWithPOM {
 	        usernameField.click();
 	        usernameField.sendKeys("Graeme");
 
-	        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+	        FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver);
 	        wait.until(ExpectedConditions.presenceOfElementLocated(By.id("username")));
 
 	        driver.findElement(By.id("store")).click();
