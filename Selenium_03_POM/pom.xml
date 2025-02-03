@@ -1,6 +1,10 @@
    <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <properties>
+        <configuration-destfile>C:\JenkinsData\JenkinsAgent\workspace\PipeLine 1\Selenium_03_POM\target/jacoco.exec</configuration-destfile>
+    </properties>
+
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.testing</groupId>
     <artifactId>Selenium_03_POM</artifactId>
@@ -20,12 +24,12 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>4.25.0</version>
+            <version>4.28.0</version>
         </dependency>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-chrome-driver</artifactId>
-            <version>4.25.0</version>
+            <version>4.28.0</version>
         </dependency>
         <dependency>
     <groupId>com.squareup.okhttp3</groupId>
