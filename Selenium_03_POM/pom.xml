@@ -51,7 +51,7 @@
                             <goal>prepare-agent</goal>
                         </goals>
                           <configuration>
-                               <destfile>C:\JenkinsData\JenkinsAgent\workspace\PipeLine 1\Selenium_03_POM\target/jacoco.exec</destfile>
+                               <destFile>C:\JenkinsData\JenkinsAgent\workspace\PipeLine 1\Selenium_03_POM\target\jacoco.exec</destFile>
                         </configuration>
                     </execution>
                 </executions>
