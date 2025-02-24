@@ -10,4 +10,4 @@ COPY target/Selenium_03_POM-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps/
 EXPOSE 8080
 
 # Start Tomcat server
-CMD ["catalina.sh", "run"]
+ENTRYPOINT ["catalina.sh", "run"]
