@@ -2,6 +2,8 @@ package com.test;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 //POM Example
 public class WebPOM {
     private WebDriver driver;
@@ -13,15 +15,16 @@ public class WebPOM {
     private By removeButton = By.id("remove");
     private By resetButton = By.id("reset");
 
+
+ 
     public WebPOM(WebDriver driver) {
         this.driver = driver;
     }
 
     // Methods to interact with web elements
-    public String getUser() {
-        String user = driver.findElement(usernameField).getText();
-        System.out.println("The username field contains: " + user);
-        return user;
+    @SuppressWarnings("deprecation")
+	public String getUser() {
+        return driver.findElement(usernameField).getAttribute("value");
     }
 
     public void enterName(String name) {
@@ -48,4 +51,12 @@ public class WebPOM {
         driver.findElement(resetButton).click();
         System.out.println("The Form has been reset");
     }
+    @SuppressWarnings("deprecation")
+    public String getLegend() {
+    	WebElement legElement = driver.findElement(By.id("leg"));
+    	String legend = legElement.getAttribute("innerHTML");
+    	legend = legend.replace("<h4>", "").replace("</h4>", "");
+    	return legend;
+    }
+
 }

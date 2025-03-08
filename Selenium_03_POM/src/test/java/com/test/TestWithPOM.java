@@ -3,6 +3,7 @@ package com.test;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.time.Duration;
+import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
 import org.junit.jupiter.api.AfterEach;
@@ -13,6 +14,7 @@ import org.openqa.selenium.By;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 
@@ -42,7 +44,7 @@ class TestWithPOM {
         driver.quit();
 	}
 
-	 @Test
+		 @Test
 	    @Timeout(value = 10, unit = TimeUnit.SECONDS)
 	    public void testAddUser() {
 	        WebElement usernameField = driver.findElement(By.id("username"));
@@ -58,6 +60,19 @@ class TestWithPOM {
 	        String storedValue = (String) jsExecutor.executeScript("return localStorage.getItem('user');");
 	        assertEquals("Graeme", storedValue);
 	    }
+/*
+ @Test
+ 	@Timeout(value = 10, unit = TimeUnit.SECONDS)
+ 	public void testAddUser() {
+ 	myPOM.enterName("Graeme");
+ 	FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver);
+	        wait.until(ExpectedConditions.presenceOfElementLocated(By.id("username")));
+	myPOM.clickStore();
+    JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+	        String storedValue = (String) jsExecutor.executeScript("return localStorage.getItem('user');");
+	        assertEquals("Graeme", storedValue);
+ }
+ */	
 
 	    @Test
 	    @Timeout(value = 10, unit = TimeUnit.SECONDS)
@@ -75,11 +90,33 @@ class TestWithPOM {
 	        assertEquals("Graeme", storedValue);
 
 	        driver.findElement(By.id("recall")).click();
+	        
 	        wait.until(ExpectedConditions.textToBePresentInElementValue(usernameField, "Graeme"));
 	        String usernameValue = usernameField.getAttribute("value");
 	        assertEquals("Graeme", usernameValue);
 	    }
 
+/*
+		 @Test
+		 @Timeout(value = 20, unit = TimeUnit.SECONDS) // Increased timeout
+		 public void testRecallUser() {
+		     myPOM.enterName("Graeme");
+
+		     FluentWait<WebDriver> wait = new FluentWait<>(driver)
+		         .withTimeout(Duration.ofSeconds(50)) // Increased wait time
+		         .pollingEvery(Duration.ofMillis(500))
+		         .ignoring(NoSuchElementException.class);
+		     myPOM.clickStore();
+		     myPOM.clickRecall();
+		     // Retrieve the username
+		     System.out.println("Retrieving username...");
+		     String usernameValue = myPOM.getUser();
+		     System.out.println("The value of the username field is: " + usernameValue);
+		     assertEquals("Graeme", usernameValue);
+		 }
+
+*/
+	    
 	    @Test
 	    @Timeout(value = 10, unit = TimeUnit.SECONDS)
 	    public void testRemoveUser() {
@@ -101,6 +138,25 @@ class TestWithPOM {
 	        String usernameValue = usernameField.getAttribute("value");
 	        assertEquals("", usernameValue);
 	    }
+/*
+	    @Test
+	    @Timeout(value = 10, unit = TimeUnit.SECONDS)
+	    public void testRemoveUser() {
+		     myPOM.enterName("Graeme");
+		     FluentWait<WebDriver> wait = new FluentWait<>(driver)
+		         .withTimeout(Duration.ofSeconds(50)) // Increased wait time
+		         .pollingEvery(Duration.ofMillis(500))
+		         .ignoring(NoSuchElementException.class);
+		     myPOM.clickStore();
+		     myPOM.clickRecall();
+		     myPOM.clickRemove();
+		     // Retrieve the username
+		     System.out.println("Retrieving username...");
+		     String usernameValue = myPOM.getUser();
+		     System.out.println("The value of the username field is: " + usernameValue);
+		     assertEquals("", usernameValue);
+		 }
+*/
 
 	    @Test
 	    @Timeout(value = 10, unit = TimeUnit.SECONDS)
@@ -127,4 +183,28 @@ class TestWithPOM {
 	        assertEquals("", usernameValue);
 	        assertEquals("Enter Name:", legendText);
 	    }
+/*
+	    @Test
+	    @Timeout(value = 30, unit = TimeUnit.SECONDS)
+	    public void testReset() {
+		     myPOM.enterName("Graeme");
+		     FluentWait<WebDriver> wait = new FluentWait<>(driver)
+		         .withTimeout(Duration.ofSeconds(20)) // Increased wait time
+		         .pollingEvery(Duration.ofMillis(500))
+		         .ignoring(NoSuchElementException.class);
+		     myPOM.clickStore();
+		     myPOM.clickRecall();
+		     myPOM.clickRemove();
+		     myPOM.clickReset();
+		     // Retrieve the username & legend
+		     System.out.println("Retrieving username...");
+		     String usernameValue = myPOM.getUser();
+		     System.out.println("The value of the username field is: " + usernameValue);
+		     assertEquals("", usernameValue);
+		     String legendValue = myPOM.getLegend();
+		     System.out.println("The value of the username legend is: " + legendValue);
+		     assertEquals("Enter Name: ", legendValue);
+		 } 
+ */
+ 
 	}
