@@ -64,6 +64,9 @@
                <configuration>
               <webxml>src/main/webapp/WEB-INF/web.xml</webxml>
               </configuration>
+             <configuration>
+             <failOnMissingWebXml>false</failOnMissingWebXml>
+             </configuration>
            </plugin>
            </plugins>
     </build>
