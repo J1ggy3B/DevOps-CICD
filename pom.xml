@@ -1,1 +1,72 @@
+ <project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <properties>
+        <configuration-destfile>C:\JenkinsData\JenkinsAgent\workspace\PipeLine 1\Selenium_03_POM\target/jacoco.exec</configuration-destfile>
+    </properties>
 
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.testing</groupId>
+    <artifactId>Selenium_03_POM</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>Selenium_03_POM</name>
+    
+    <!-- Set packaging type to WAR -->
+    <packaging>war</packaging>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.10.2</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>4.28.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-chrome-driver</artifactId>
+            <version>4.28.0</version>
+        </dependency>
+        <dependency>
+    <groupId>com.squareup.okhttp3</groupId>
+    <artifactId>okhttp</artifactId>
+    <version>4.12.0</version>
+</dependency>
+
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.8.10</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                          <configuration>
+                               <destFile>C:\JenkinsData\JenkinsAgent\workspace\PipeLine 1\Selenium_03_POM\target\jacoco.exec</destFile>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-war-plugin</artifactId>
+            <version>3.3.1</version>
+            <configuration>
+                <outputDirectory>${project.build.directory}</outputDirectory>
+                <warName>Selenium_03_POM-0.0.1-SNAPSHOT</warName>
+            </configuration>
+        	</plugin>
+        </plugins>
+    </build>
+</project>
