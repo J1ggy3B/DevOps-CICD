@@ -5,6 +5,6 @@
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
    <welcome-file-list>
-  <welcome-file>Index.html</welcome-file>
+  <welcome-file>/src/main/webapp/Index.html</welcome-file>
   </welcome-file-list>
 </web-app>
